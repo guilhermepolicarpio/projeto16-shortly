@@ -1,9 +1,11 @@
 import connection from "../database.js";
 
-export default function authMiddleware(authSchema){
+export default function registerMiddleware(signUpSchema){
     return async(req,res,next) =>{
         const { name, email, password,confirmPassword} = req.body;
-        const validation = authSchema.validate(req.body)
+
+        try{
+        const validation = signUpSchema.validate(req.body)
 
         const verifyUser = await connection.query('SELECT * FROM users WHERE email = $1', [email]);
 
@@ -20,5 +22,9 @@ export default function authMiddleware(authSchema){
         }
 
         next()
+    }catch(error){
+        console.log(error)
+        res.sendStatus(422)
+    }
     }
 }
