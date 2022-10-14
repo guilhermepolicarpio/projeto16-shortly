@@ -1,12 +1,9 @@
-import connection from "../database.js";
-import bcrypt from "bcrypt"
-
-export default function loginMiddleware(loginSchema){
+export default function validateSchema(Schema){
     return async(req,res,next) =>{
     const { email, password} = req.body;
 
     try{
-        const validation = loginSchema.validate(req.body)
+        const validation = Schema.validate(req.body)
 
         if(validation.error){
             return res.status(422).send(validation.error.message)
