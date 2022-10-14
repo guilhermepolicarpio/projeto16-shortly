@@ -1,7 +1,6 @@
 import connection from "../database.js";
 import bcrypt from "bcrypt"
 import { v4 as uuid} from "uuid"
-import { userInfo } from "os";
 
 export async function signUp(req,res){
 

@@ -2,10 +2,10 @@ import connection from "../database.js";
 
 const tokenValidation = async (req,res,next) =>{
 
-    const { Authorization } = req.headers;
+    const authorization = req.headers.authorization;
 
-    const token = Authorization?.replace('Bearer ', '');
-
+    const token = authorization?.replace('Bearer ', '');
+    console.log(token)
     if(!token) 
         return res.status(401).send("Invalid token!")
     
@@ -16,7 +16,7 @@ const tokenValidation = async (req,res,next) =>{
             return res.status(401).send("Session expired!")
 
         res.locals.userId = session.userId;
-        res,locals.token = session.token;
+        res.locals.token = session.token;
         next();
 
 
