@@ -1,10 +1,12 @@
 import { Router } from "express";
 import tokenValidation from "../middlewares/tokenMiddleware.js";
-import { shortenUrl } from "../controllers/urlController.js";
+import { shortenUrl, getUrl,redirectUrl } from "../controllers/urlController.js";
 
 
-const urlRouter = Router();
+const urlsRouter = Router();
 
-urlRouter.post("/urls/shorten",tokenValidation,shortenUrl)
+urlsRouter.post("/urls/shorten",tokenValidation,shortenUrl)
+urlsRouter.get("/urls/:id", getUrl)
+urlsRouter.get("/urls/open/:shortUrl", redirectUrl)
 
-export default urlRouter
+export default urlsRouter
