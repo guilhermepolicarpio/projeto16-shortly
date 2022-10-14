@@ -59,4 +59,27 @@ async function redirectUrl(req,res){
     }
 }
 
-export {shortenUrl, getUrl, redirectUrl}
+
+async function deleteUrl(req,res){
+
+    const {id} = req.params;
+
+    try{
+   
+    const checkUrl = await connection.query(`SELECT * FROM "urls" WHERE "shortUrl" = $1`, [id]) 
+
+    if(checkUrl.rowCount === 0)
+        return res.status(404).send("URL not found")
+
+    if(checkUrl.rows[0].id !== res.locals.userId)
+        return res.status(401).send("Invalid request")
+
+    await connection.query(`DELETE FROM "urls" WHERE "shortUrl"=$1`, [id])
+
+    return res.status(204).send("URL deleted")
+    }catch (error){
+        console.log(error)
+        return res.status(500).send("Error connection!")
+    }
+}
+export {shortenUrl, getUrl, redirectUrl,deleteUrl}
