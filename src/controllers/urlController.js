@@ -9,7 +9,7 @@ async function shortenUrl(req,res){
     try{
 
         console.log(res.locals.userId)
-    await connection.query(`INSERT INTO urls ("url", "shortUrl", "id") VALUES ($1, $2, $3)`, [url,shortUrl,res.locals.userId])
+    await connection.query(`INSERT INTO urls ("url", "shortUrl", "userId") VALUES ($1, $2, $3)`, [url,shortUrl,res.locals.userId])
     return res.status(201).send(shortUrl)
     
     }catch (error){
@@ -66,7 +66,7 @@ async function deleteUrl(req,res){
 
     try{
    
-    const checkUrl = await connection.query(`SELECT * FROM "urls" WHERE "shortUrl" = $1`, [id]) 
+    const checkUrl = await connection.query(`SELECT * FROM "urls" WHERE "id" = $1`, [id]) 
 
     if(checkUrl.rowCount === 0)
         return res.status(404).send("URL not found")
@@ -74,7 +74,7 @@ async function deleteUrl(req,res){
     if(checkUrl.rows[0].id !== res.locals.userId)
         return res.status(401).send("Invalid request")
 
-    await connection.query(`DELETE FROM "urls" WHERE "shortUrl"=$1`, [id])
+    await connection.query(`DELETE FROM "urls" WHERE "id"=$1`, [id])
 
     return res.status(204).send("URL deleted")
     }catch (error){
