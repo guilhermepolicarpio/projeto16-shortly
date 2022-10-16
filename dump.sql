@@ -118,6 +118,8 @@ INSERT INTO public.urls OVERRIDING SYSTEM VALUE VALUES ('http://www.gazetadopovo
 INSERT INTO public.urls OVERRIDING SYSTEM VALUE VALUES ('http://topview.com.br/', 'N-Tno6FzR', 0, 1, '2022-10-16 14:33:47.536594', 4);
 INSERT INTO public.urls OVERRIDING SYSTEM VALUE VALUES ('http://epocanegocios.globo.com/', 'IlgJBeHKQ', 0, 1, '2022-10-16 14:33:58.640874', 5);
 INSERT INTO public.urls OVERRIDING SYSTEM VALUE VALUES ('http://www.youtube.com/?gl=BR&hl=pt', '0N1v-hgRD', 5, 1, '2022-10-16 14:34:10.467189', 6);
+INSERT INTO public.urls OVERRIDING SYSTEM VALUE VALUES ('https://bootcampra.notion.site/Projeto-Shortly-API-21533489cd5042058524caf3429b62e4', 'xKxSejNP9', 0, 1, '2022-10-16 19:02:08.237107', 7);
+INSERT INTO public.urls OVERRIDING SYSTEM VALUE VALUES ('https://engoo.com.br/app/daily-news', 'ZtD5e70Jy', 0, 1, '2022-10-16 19:02:25.353529', 8);
 
 
 --
@@ -139,7 +141,7 @@ SELECT pg_catalog.setval('public.sessions_id_seq', 7, true);
 -- Name: urls_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public.urls_id_seq', 6, true);
+SELECT pg_catalog.setval('public.urls_id_seq', 8, true);
 
 
 --
