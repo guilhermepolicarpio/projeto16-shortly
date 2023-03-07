@@ -8,7 +8,7 @@ import signUpSchema from '../schemas/signUpSchema.js';
 
 const authRouter = Router();
 
-authRouter.post("/signup", registerMiddleware(signUpSchema), signUp)
-authRouter.get("/signin", validateSchema(loginSchema), signIn)
+authRouter.post('/signup', registerMiddleware(signUpSchema), signUp);
+authRouter.get('/signin', validateSchema(loginSchema), signIn);
 
-export default authRouter
+export default authRouter;

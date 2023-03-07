@@ -1,4 +1,4 @@
-import joi from "joi";
+import joi from 'joi';
 
 const signUpSchema = joi.object({
     name: joi.string().required(),
