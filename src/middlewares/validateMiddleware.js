@@ -1,19 +1,19 @@
-export default function validateSchema(Schema){
-    return async(req,res,next) =>{
-    const { email, password} = req.body;
+export default function validateSchema(Schema) {
+    return async (req, res, next) => {
+        const { email, password } = req.body;
 
-    try{
-        const validation = Schema.validate(req.body)
+        try {
+            const validation = Schema.validate(req.body)
 
-        if(validation.error){
-            return res.status(422).send(validation.error.message)
+            if (validation.error) {
+                return res.status(422).send(validation.error.message)
+            }
+
+            next()
+
+        } catch (error) {
+            console.log(error)
+            res.sendStatus(422)
         }
-
-        next()
-
-    }catch(error){
-    console.log(error)
-    res.sendStatus(422)
-    }
     }
 }

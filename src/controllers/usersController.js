@@ -1,17 +1,16 @@
-import { Console } from "console";
 import connection from "../database.js";
 
-async function getUser(req,res){
+async function getUser(req, res) {
 
     const { userId } = res.locals;
 
-    try{
+    try {
         const user = await connection.query("SELECT * FROM users WHERE id=$1", [userId])
 
-        if(user.rowCount === 0)
+        if (user.rowCount === 0)
             return res.status(404).send("User not found")
 
-        const {rows: userInfo} = await connection.query(` 
+        const { rows: userInfo } = await connection.query(` 
         
         SELECT
                 users.id ,
@@ -32,20 +31,20 @@ async function getUser(req,res){
         GROUP BY users.id,users.name
               
         `, [userId])
-        
+
         res.status(200).send(userInfo);
 
-        
-    }catch (error){
-    console.log(error)
-    return res.status(500).send("Error connection!")
+
+    } catch (error) {
+        console.log(error)
+        return res.status(500).send("Error connection!")
     }
 
 }
 
-async function ranking(req,res){
+async function ranking(req, res) {
 
-    try{
+    try {
 
         const { rows: ranking } = await connection.query(`
         
@@ -67,9 +66,9 @@ async function ranking(req,res){
 
         res.status(200).send(ranking);
 
-    }catch (error){
-    console.log(error)
-    return res.status(500).send("Error connection!")
+    } catch (error) {
+        console.log(error)
+        return res.status(500).send("Error connection!")
     }
 }
-export { getUser,ranking}
+export { getUser, ranking }
