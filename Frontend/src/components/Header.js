@@ -51,6 +51,7 @@ ul {
   a {
     color: #333;
     text-decoration: none;
+    font-family: 'Lexend Deca';
     font-weight: normal;
     padding: 10px;
     transition: color 0.2s ease-in-out;

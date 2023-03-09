@@ -5,9 +5,9 @@ const GlobalStyle = createGlobalStyle`
     display: flex;
     justify-content: center;
     background: #ffffff;
-    min-height: 100vh;
-    width: 100%;
-    padding: 3vh;
+    span{ 
+      font-family: 'Lexend Deca';
+  }
   }
 `;
 

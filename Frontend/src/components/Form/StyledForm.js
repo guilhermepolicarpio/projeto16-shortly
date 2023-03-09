@@ -20,6 +20,7 @@ font-weight: 400;
 font-size: 14px;
 line-height: 18px;
 color: #9C9C9C;
+margin: 12.5px 0px;
 }
 
 button{

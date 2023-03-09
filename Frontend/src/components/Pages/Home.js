@@ -139,5 +139,6 @@ width: 33px;
 height: 38px;
 color: #EA4F4F;
 margin-left: 67px;
+cursor: pointer;
 }
 `;
