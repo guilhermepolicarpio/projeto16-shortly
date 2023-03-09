@@ -4,10 +4,9 @@ export const FormWrapper = styled.form`
 display: flex;
 flex-direction: column;
 width: 100%;
-
+padding-right: 50px;
 
 input{
-margin-top: 8px !important;
 background: #FFFFFF;
 border: 1px solid rgba(120, 177, 89, 0.25);
 box-shadow: 0px 4px 24px rgba(120, 177, 89, 0.12);

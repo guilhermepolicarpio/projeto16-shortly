@@ -1,19 +1,28 @@
 import styled from 'styled-components';
 
-export default function Header({currentPage}) {
-    
-    const page = currentPage;
+export default function Header({ currentPage }) {
 
-    return (
-        <HeaderWrapper>
-            <HeaderMenu>
-                <ul>
-                    <li><a href='/' className={page === 'login' ? 'active' : ''}>Login</a></li>
-                    <li><a href='/register' className={page === 'register' ? 'active' : ''}>Signup</a></li>
-                </ul>
-            </HeaderMenu>
-        </HeaderWrapper>
-    );
+  const page = currentPage;
+
+  return (
+    <HeaderWrapper>
+      <HeaderMenu>
+        {page ==='home' ?
+          <ul>
+          <li><a href='/home' className={page === 'home' ? 'active' : ''}>Home</a></li>
+          <li><a href='/ranking' className={page === 'Ranking' ? 'active' : ''}>Ranking</a></li>
+          <li><a href='/exit' >Exit</a></li>
+        </ul>
+          :
+          <ul>
+            <li><a href='/' className={page === 'login' ? 'active' : ''}>Login</a></li>
+            <li><a href='/register' className={page === 'register' ? 'active' : ''}>Signup</a></li>
+          </ul>
+        }
+
+      </HeaderMenu>
+    </HeaderWrapper>
+  );
 };
 
 const HeaderWrapper = styled.div`
@@ -23,7 +32,7 @@ justify-content: center
 
 const HeaderMenu = styled.div`
 display: flex;
-right: 3.5em;
+right: 7.0em;
 top: 3.5em;
 position: absolute;
 
@@ -36,7 +45,7 @@ ul {
   }
 
   li {
-    margin: 0 10px;
+    margin: 0 7px;
   }
 
   a {

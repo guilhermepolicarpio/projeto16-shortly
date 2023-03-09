@@ -1,13 +1,12 @@
 import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import styled from 'styled-components';
 
-import useSignUp from '../hooks/api/useSignUp';
-import { FormWrapper, SignUpText } from './Form/StyledForm';
-import Footer from './Footer';
-import Header from './Header';
-import HeaderTittle from './HeaderTittle';
+import useSignUp from '../../hooks/api/useSignUp';
+import Footer from '../Footer';
+import { FormWrapper } from '../Form/StyledForm';
+import Header from '../Header';
+import HeaderTittle from '../HeaderTittle';
 
 export default function SignUp({currentPage}) {
     const [name, setName] = useState('');

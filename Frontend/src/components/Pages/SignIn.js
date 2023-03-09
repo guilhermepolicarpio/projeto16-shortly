@@ -2,12 +2,12 @@ import { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
-import UserContext from '../contexts/UserContext';
-import useSignIn from '../hooks/api/useSignIn';
-import Footer from './Footer';
-import { FormWrapper } from './Form/StyledForm';
-import Header from './Header';
-import HeaderTittle from './HeaderTittle';
+import UserContext from '../../contexts/UserContext';
+import useSignIn from '../../hooks/api/useSignIn';
+import Footer from '../Footer';
+import { FormWrapper } from '../Form/StyledForm';
+import Header from '../Header';
+import HeaderTittle from '../HeaderTittle';
 
 export default function SignIn({currentPage}) {
 
