@@ -1,15 +1,15 @@
 import { useContext, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 import UserContext from '../contexts/UserContext';
 import useSignIn from '../hooks/api/useSignIn';
-import Button from './Form/Button';
-import Input from './Form/Input';
-import { FormWrapper, InputWrapper, SignUpText } from './Form/StyledForm';
+import Footer from './Footer';
+import { FormWrapper } from './Form/StyledForm';
+import Header from './Header';
+import HeaderTittle from './HeaderTittle';
 
-
-export default function SignIn() {
+export default function SignIn({currentPage}) {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -35,35 +35,31 @@ export default function SignIn() {
         setUserData(userData);
         toast('Login realizado com sucesso!');
         navigate('/');
-      }
+    }
 
     return (
 
-        <FormWrapper onSubmit={submit}>
-            <InputWrapper>
-                <Input
+        <>
+            <Header currentPage={currentPage}/>
+            <FormWrapper onSubmit={submit}>
+                <HeaderTittle/>
+                <input
                     name="email"
                     placeholder="E-mail"
                     type="text"
                     value={email}
                     onChange={e => setEmail(e.target.value)}
                 />
-            </InputWrapper>
-            <InputWrapper>
-                <Input
+                <input
                     name="password"
                     placeholder="Password"
                     type="password"
                     value={password}
                     onChange={e => setPassword(e.target.value)}
                 />
-            </InputWrapper>
-            <Button type="submit" >Login</Button>
-            <Link to="/sign-up">
-                <SignUpText >
-                    <p> Não tem cadastro ? Clique aqui</p>
-                </SignUpText>
-            </Link>
-        </FormWrapper>
+                <Footer currentPage={currentPage}/>
+            </FormWrapper>
+
+        </>
     );
 };
