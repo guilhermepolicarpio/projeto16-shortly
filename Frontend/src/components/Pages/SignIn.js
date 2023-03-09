@@ -38,7 +38,6 @@ export default function SignIn({currentPage}) {
     }
 
     return (
-
         <>
             <Header currentPage={currentPage}/>
             <FormWrapper onSubmit={submit}>
@@ -59,7 +58,6 @@ export default function SignIn({currentPage}) {
                 />
                 <Footer currentPage={currentPage}/>
             </FormWrapper>
-
         </>
     );
 };

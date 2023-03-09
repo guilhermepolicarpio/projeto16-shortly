@@ -16,7 +16,7 @@ export default function Header({ currentPage }) {
           :
           <ul>
             <li><a href='/' className={page === 'login' ? 'active' : ''}>Login</a></li>
-            <li><a href='/register' className={page === 'register' ? 'active' : ''}>Signup</a></li>
+            <li><a href='/register' className={page === 'register' ? 'active' : ''}>Register</a></li>
           </ul>
         }
 
@@ -32,8 +32,8 @@ justify-content: center
 
 const HeaderMenu = styled.div`
 display: flex;
-right: 7.0em;
-top: 3.5em;
+right: 10.7em;
+top: 2.5em;
 position: absolute;
 
 ul {

@@ -26,7 +26,9 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
-margin-top: 2.8em;
+position: absolute;
+bottom:30px;
+left:40%;
 
 button{
     cursor: pointer;

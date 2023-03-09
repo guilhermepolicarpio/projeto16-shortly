@@ -20,7 +20,7 @@ font-weight: 400;
 font-size: 14px;
 line-height: 18px;
 color: #9C9C9C;
-margin: 12.5px 0px;
+margin: 8px 0px;
 }
 
 button{
@@ -28,7 +28,7 @@ background: #5D9040;
 border-radius: 12px;
 width: 182px;
 height: 60px;
-margin-top: 68px;
+margin-top: 28px;
 border: none;
 p{
 font-family: 'Lexend Deca';

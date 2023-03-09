@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import shortly from './assets/shortly.png';
+import shortly from './assets/Logo.png';
 
 export default function Header({currentPage}) {
 
@@ -10,7 +10,7 @@ export default function Header({currentPage}) {
         <WelcomeMessage>
              <span>{page === 'home' ? 'Welcome, NAME' : ''}</span>
             <HeaderWrapper>
-                <p>Shortly</p>
+
                 <img src={shortly} alt='' />
             </HeaderWrapper>
         </WelcomeMessage>
@@ -21,18 +21,10 @@ const HeaderWrapper = styled.div`
 display: flex;
 justify-content: center;
 align-items: center;
-margin-top: 2.8em;
-p{
-font-family: 'Lexend Deca';
-font-weight: 200;
-font-size: 64px;
-color: #000000;
-margin-right: 2%;
-}
+margin-top: 2.0em;
 
 img{
-width: 102px;
-height: 96.33px;
+    margin: 35px 0px;
 }
 `;
 
@@ -40,7 +32,7 @@ const WelcomeMessage = styled.div`
 
 span{
 top: 4.5em;
-left: 10%;
+left: 15%;
 position: absolute;
 font-family: 'Lexend Deca';
 font-weight: 400;
